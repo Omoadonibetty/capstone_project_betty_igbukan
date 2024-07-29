@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex flex-col lg:flex-row">
+        <!-- Sidebar -->
+        <aside class="w-full lg:w-64 bg-gray-800 text-white h-auto lg:h-screen">
+            <div class="p-4">
+                <h2 class="text-xl font-bold mb-4">Navigation</h2>
+                <ul>
+                    <li class="mb-2">
+                        <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Dashboard</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="page5_records.html" class="block py-2 px-4 rounded hover:bg-gray-700">Medical Records</a>
+                    </li>
+                    <li class="mb-2">
+                        
+                        <a href="page7_birthdata.html" class="block py-2 px-4 rounded hover:bg-gray-700">Data Analysis & Reports</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="page9_notification.html" class="block py-2 px-4 rounded hover:bg-gray-700">Notification & Alerts</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">User Management</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">System Settings</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Feedback & Suggestions</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <main class="flex-1 p-6">
+            <!-- Overview Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Total Births</h3>
+                    <p class="text-gray-600 text-lg">1,234</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Total Deaths</h3>
+                    <p class="text-gray-600 text-lg">567</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Total Users</h3>
+                    <p class="text-gray-600 text-lg">789</p>
+                </div>
+            </div>
+
+            <!-- User Management Section -->
+            <section class="mb-6">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">User Management</h2>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <p class="text-gray-600">Manage user accounts, permissions, and roles.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4">Manage Users</button>
+                </div>
+            </section>
+
+            <!-- System Settings Section -->
+            <section>
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">System Settings</h2>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <p class="text-gray-600">Configure system preferences and settings.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4">System Settings</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

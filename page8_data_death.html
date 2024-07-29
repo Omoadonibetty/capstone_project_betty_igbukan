@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis & Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Data Analysis & Reports</h1>
+            <div>
+                <a href="#" class="text-gray-600 hover:text-blue-500">Profile</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex flex-col lg:flex-row">
+        <!-- Sidebar -->
+        <aside class="w-full lg:w-64 bg-gray-800 text-white lg:h-screen">
+            <div class="p-8">
+                <h2 class="text-xl font-bold mb-4">Navigations</h2>
+                <ul>
+                    <li class="mb-2">
+                        <a href="page7_birthdata.html" class="block py-2 px-4 rounded hover:bg-gray-700">Birth Rates Analysis</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="page8_data_death.html" class="block py-2 px-4 rounded hover:bg-gray-700">Death Rates Analysis</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="page99_data2.html" class="block py-2 px-4 rounded hover:bg-gray-700">Custom Reports</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="page9_notification.html" class="block py-2 px-4 rounded hover:bg-gray-700">Notifications</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Back to Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Section -->
+        <section class="m-4 w-full lg:w-3/4">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Death Rates Analysis</h2>
+            <div class="w-full bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600 font-bold">Select Time Frame</p>
+                <form action="#" method="get">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div>
+                            <label for="from" class="text-xl font-bold">From:</label>
+                            <input type="date" name="from" id="from" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="to" class="text-xl font-bold">To:</label>
+                            <input type="date" name="to" id="to" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold mt-4">Choose Visualization:</h3>
+                    <select id="chart-type" class="form-select block w-full mt-1 border-gray-300 rounded-md shadow-sm">
+                        <option value="bar-chart">Bar Chart</option>
+                        <option value="pie-chart">Pie Chart</option>
+                        <option value="box-chart">Box Plot</option>
+                        <option value="line-graph">Line Graph</option>
+                        <option value="scatter-plot">Scatter Plot</option>
+                        <option value="area-chart">Area Chart</option>
+                        <option value="histogram">Histogram</option>
+                        <option value="bubble-chart">Bubble Chart</option>
+                        <option value="radar-chart">Radar Chart</option>
+                        <option value="donut-chart">Donut Chart</option>
+                        <option value="heatmap">Heatmap</option>
+                        <option value="map">Map</option>
+                    </select>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4">Submit</button>
+                </form>
+                 <!-- Footer Image -->
+    <div class="bg-gray-200 p-0">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAyVBMVEX////s8PG5v8PuKQDuLwD+9vX4+fnt8fLR1djxZVS0u7/3qqLl6uza3d/Cx8vq7O396Ob1mI74vLbvOhv5xsH+8/L09vers7j84d72oZj708/xXEn4uLL6zcjwUTvvPyPzgHP/GgDvRCrIzND/enT0joPybl/729jzfXDW2tz/KRnuMw//XVX0h3vxYE7/mJT/tLH/PTL/c2z/qqf/UUn/NSn/aWH2nZT/i4fwUz/1lInydmj/WFD/ran/oJz/KBaGk5r/h4KfqK3lm7M+AAAGZUlEQVR4nO2dDXeaOhiAI98iIFUURMAirdo6bXdX19Vud+3+/4+6nb3zE00iSRg973O2nZm+mjwGSXgTKUIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABnYndRZqGmg1Bml90WLnQlS9Ik3USm082aZbeGC5YtISu7QZKEmsZ7kV6r6eU2iim2bWQ+8o3MdnxtXVorsUUc6L7/1baKPphhDmBYfcCw+oBh9QHD6gOGvLi76giqqSTDML29E1RVOYZB9DmNBdVVimGszFAwV8VUVoZhQ268/ft0Iaa2EgxnyuoAjRUx5xrhhuo8cd//V78WUqFow2A4+vP5C2VXRI2CDT15q+NGMxFVijXsydHWo7GQThRqOGmHO4+fnwVUKtCw00/2+iyQx2yr0CRT8x3DlvxNmTjD8WB0UDY7LCqG7zeNvYywMMOWkjPCu0p4WFgA68a2JWQ6mrHJ6osyvNg5x6y5rrOtxsiQJWnIudkUiTG8+ifK76yOwn0CLsTQS2+/HPnRRZ935UIMx59vj5001anHuXIRhqFyYmTvJZxrF2CoDh5P/bTd4lu9AMPR6fNlY8i3ev6GjTbmOnCQO44wg7vhWMadSqIB1wZwNxwusSFJg2cDeBtOCMa7Vjs3KcUoU8XZMJqSXAImvZzCu/SKSRP4GgYK0VDgTff7K1w+PixSJm3ga5gQ5in6O9cd8fVg+uyFn+6ZJOO4Gs5I5yubzKLqTdrtS2/Vp2xSADwNW3JAGlpfdXYnGimD6/XVhsvkwoOjoTslH8rDXqA25kryuDND77GY7nA07E8ogj+ld5PeQZcnDDL//AyXVB2Q3n7KKQ3Jj/OjcDOM6fJo3mvuwHk5L9wQXoadNpOpmNouPC3nZVhnlCeMcFcmWDgZXgxYrX/Wac5XKJOQYdY009kUcTHs3B1JrZ1BIFO8lGHcdB1kSsjebPTmYvj1ls2UcsUjRSLHsQzD+G1o/Z8w1XWdi+G39DPDVxueSvPsokkmkiS7ZpqbMg6Gar8RstyFEBdbhGNv2HlivcvislDqn7mhO2S9noQ6FBPcQ1gbBgOqszsZUX6agwzGhuMplw0W8wIr/mwNY4X8vEcD1aC4B1PDlswrL3hx/uoGS8P7/FVQJgzz0nFEMDTsYbPbBYjb5z6TneGS8Zr8Ht7DsUVWDPSG39Pcrpq1Ge8c2a/23PQptWGQLl77o8Z+duF5yHl/049zU+D0fXj3PQgf+8pwEm051Yeitm1TQ2148Z6mVb3lkzKYtVaWar8vaMPvGdAauvImS9vxrodKEn1Z/Lhk2ia20BrWL3cfu5H3c8HyapA5lIat6eHn7d+f94wawwU6QwbJPeHQGc6KJ2iFQ2XIIskuHCrDBL/r4O+DxpD33h4WaH/+rKEwdBXem+yK03xBfnb2PRVGzFNM7HGc7vm7oD2ijSPlcuO8NPfvbUJuOOS6c4kVFmpKb125dX8aYsMl732gvCA1LJLtKhdSw76Q7yjxgNCwUNa5XMgMO1POW5U5QmY4YfzFD5EQGRZcwSsXIsOEz2qEGEgMmWwvKw0Cw0AWdXMALhwYHnzi3IaIb3ryY89QXaRRrxG1vHAcuKuk09f0W2WHwhV7hnF6+235XH8aTpXftAeNxeKhnJaxYsewM5/dr++qonbcYByH8RXfFRfubBu2pqO/dvXhfDaG6rNSvWQoAWvDeDCv8MTlBH8Mr+WzF8r/ct4Nx0lS8fPJcVaGPVnMjVRK4c3QnQ8qPS3DoKNImVR70rKNJKHMbG7vgo5fvQpfvh+gdw07294F3dXyv8hRXXRHy7Z3QSP0kIq6MZwQui9O15Es/c1xzYcdJNZ8pPt55wP3vqw+YFh9wLD6gGH1AcPqA4bVBwyrDxhWHzCsPmBYTbZusvsxDZ2ms/H6kIYmqhnrB1YNh5gIfIhFbmhkfpfiDcH3MosIfOKW5mjTNXwMzSszMcSG8Ps84fubRQQ+hOa4AwAAAAA6WIxl+AkEQQQmRDtzQNT8zMCEZIaPiWi+4KqxMwcToUn+yTmL8Qv5hnQq4tgTdWRig3CGDq75yDSwIf6v050o6QZBUw9pOhruaZqPOX5s5wX3q9odTcK8iGHZp3+lvfn2RuPe6lzsDBuB7yL8dU2GDTEwnxbrd29g6wEAAAAAAAAAAAAAAAAAAAA+MP8BBDNQs2bQFJgAAAAASUVORK5CYII=" alt="Footer Image" class="w-96 mt-2">
+    </div>
+            </div>
+        
+        </section>
+    </div>
+
+    
+</body>
+</html>

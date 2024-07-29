@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications & Alerts</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Notifications</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex flex-col lg:flex-row">
+        <!-- Sidebar -->
+        <aside class="w-full lg:w-64 bg-gray-800 text-white lg:h-screen p-8">
+            <h2 class="text-xl font-bold mb-4">Navigations</h2>
+            <ul>
+                <li class="mb-2">
+                    <a href="#reminders" class="block py-2 px-4 rounded hover:bg-gray-700">Reminders</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#alerts" class="block py-2 px-4 rounded hover:bg-gray-700">Emergency Alerts</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Back to Dashboard</a>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="container mx-auto p-4 sm:p-6">
+            <section id="reminders" class="bg-white shadow-md rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+                <h2 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Automated Reminders</h2>
+                <ul class="list-disc pl-5">
+                    <li class="mb-2 text-sm sm:text-base">Reminder 1: <span class="text-gray-700">Complete patient record updates by end of the day.</span></li>
+                    <li class="mb-2 text-sm sm:text-base">Reminder 2: <span class="text-gray-700">Weekly data backup scheduled for 3 PM tomorrow.</span></li>
+                    <li class="mb-2 text-sm sm:text-base">Reminder 3: <span class="text-gray-700">Review monthly health report draft by Friday.</span></li>
+                </ul>
+            </section>
+
+            <section id="alerts" class="bg-white shadow-md rounded-lg p-4 sm:p-6">
+                <h2 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Emergency Alerts</h2>
+                <div class="bg-red-100 border border-red-400 text-red-700 px-3 sm:px-4 py-2 sm:py-3 rounded mb-3 sm:mb-4" role="alert">
+                    <strong class="font-bold">Alert 1:</strong>
+                    <span class="block sm:inline">System maintenance: Critical update required. Access will be limited from 2 PM to 3 PM.</span>
+                </div>
+                <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-3 sm:px-4 py-2 sm:py-3 rounded" role="alert">
+                    <strong class="font-bold">Alert 2:</strong>
+                    <span class="block sm:inline">New health policy update: Mandatory training session scheduled next week.</span>
+                </div>
+                <div class="bg-red-100 border border-red-400 text-red-700 px-3 mt-4 sm:px-4 py-2 sm:py-3 rounded" role="alert">
+                    <strong class="font-bold">Alert 3:</strong>
+                    <span class="block sm:inline">Outbreak of Cholera</span>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
