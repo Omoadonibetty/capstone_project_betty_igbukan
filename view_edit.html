@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View and Edit Records</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tabs input[type="radio"] {
+            display: none;
+        }
+        .tabs label {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            background: #f3f4f6;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            margin-right: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tabs label:hover {
+            background: #e5e7eb;
+        }
+        .tabs input[type="radio"]:checked + label {
+            background: #4f46e5;
+            color: #fff;
+            border-bottom: 1px solid #4f46e5;
+        }
+        .tabs input[type="radio"]:checked ~ .tab-content {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-20">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">View and Edit Records</h1>
+            <div>
+                <a href="#" class="text-gray-600 hover:text-blue-500">Profile</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="fixed top-16 left-0 w-full h-full lg:w-64 bg-gray-800 text-white h-screen lg:h-auto lg:top-16 z-10">
+        <div class="p-8">
+            <h2 class="text-xl font-bold mb-4">Navigations</h2>
+            <ul>
+                <li class="mb-2">
+                    <a href="page5_records.html" class="block py-2 px-4 rounded hover:bg-gray-700">Add Records</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page6_doc_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Patient List</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page5_records.html" class="block py-2 px-4 rounded hover:bg-gray-700">View Records</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Transfer Records</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page9_notification.html" class="block py-2 px-4 rounded hover:bg-gray-700">Notifications</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page4_admin_dashboard1.html" class="block py-12 px-4 mt- 4 rounded hover:bg-gray-700">Back to Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    
+    <main class="ml-0 lg:ml-64 pt-16 lg:pt-16 p-6 lg:pl-4">
+        
+        <div class="mb-6">
+            <form action="/search" method="GET" class="bg-white p-4 rounded-lg shadow-lg flex items-center">
+                <input type="text" name="query" placeholder="Search records..." class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                <button type="submit" class="ml-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Search</button>
+            </form>
+        </div>
+
+        
+        <div class="tabs mb-6">
+            <input type="radio" id="view-tab" name="tabs" checked>
+            <label for="view-tab">View Record</label>
+            <input type="radio" id="edit-tab" name="tabs">
+            <label for="edit-tab">Edit Record</label>
+
+            
+            <div id="view" class="tab-content">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">View Medical Record</h2>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <p><strong>Case No:</strong> P-01</p>
+                    <p><strong>Last Name:</strong> Hassana</p>
+                    <p><strong>First Name:</strong> Mangu</p>
+                    <p><strong>Middle Name:</strong> Uda</p>
+                    <p><strong>Gender:</strong> Female</p>
+                    <p><strong>Age:</strong> 32</p>
+                    <p><strong>Diagnosis:</strong> Diabetes</p>
+                    <p><strong>Treatment:</strong> Medication A, Lifestyle Changes</p>
+                    <p><strong>Last Updated:</strong> July 30, 2024</p>
+                    <p><strong>Additional Notes:</strong> Follow-up required in 6 months.</p>
+                </div>
+            </div>
+
+            
+            <div id="edit" class="tab-content mt-2">
+                <h2 class="text-2xl font-bold mt-4 mb-4 text-gray-800">Edit Medical Record</h2>
+                <form action="/update-record" method="POST" class="bg-white p-4 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <label for="patient-name" class="block text-sm font-medium text-gray-700">Patient Name</label>
+                        <input type="text" id="patient-name" name="patient-name" value="John Doe" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="diagnosis" class="block text-sm font-medium text-gray-700">Diagnosis</label>
+                        <input type="text" id="diagnosis" name="diagnosis" value="Hypertension" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="treatment" class="block text-sm font-medium text-gray-700">Treatment</label>
+                        <input type="text" id="treatment" name="treatment" value="Medication A, Lifestyle Changes" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="notes" class="block text-sm font-medium text-gray-700">Additional Notes</label>
+                        <textarea id="notes" name="notes" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">Follow-up required in 6 months.</textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="ScanXraytest" class="block text-sm font-medium text-gray-700">Scans, Test Results or Xrays</label>
+                        <img src="data:image/jpeg;base64,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" alt="hypertension">
+                        <input type="file" name="pics" id="pics" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    </div>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Update Record</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

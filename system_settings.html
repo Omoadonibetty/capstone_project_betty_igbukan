@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Settings - Central Health Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        header, aside {
+            position: fixed;
+            z-index: 1000;
+        }
+
+        header {
+            top: 0;
+            width: 100%;
+        }
+
+        aside {
+            top: 4rem; 
+            bottom: 0;
+            width: 16rem; 
+            overflow-y: auto;
+        }
+
+        .content {
+            margin-left: 16rem; 
+            margin-top: 4rem; 
+            padding: 1rem;
+        }
+
+        .section-container {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">System Settings</h1>
+            <div>
+                <a href="#" class="text-gray-600 hover:text-blue-500">Profile</a>
+            </div>
+        </div>
+    </header>
+
+    <aside class="bg-gray-800 text-white h-full">
+        <div class="p-8">
+            <h2 class="text-xl font-bold mb-4">Navigations</h2>
+            <ul>
+                <li class="mb-2">
+                    <a href="#profile" class="block py-2 px-4 rounded hover:bg-gray-700">Profile Details</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#upgrade" class="block py-2 px-4 rounded hover:bg-gray-700">Upgrade</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#account" class="block py-2 px-4 rounded hover:bg-gray-700">Account Settings</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#display" class="block py-2 px-4 rounded hover:bg-gray-700">Display Settings</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#security" class="block py-2 px-4 rounded hover:bg-gray-700">Security Settings</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#notifications" class="block py-2 px-4 rounded hover:bg-gray-700">Notifications</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#backup" class="block py-2 px-4 rounded hover:bg-gray-700">Backup & Restore</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Back to Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="content">
+        <section id="profile" class="section-container">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Profile Details</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">Name: Maryann Avidime</p>
+                <p class="text-gray-600">Email: Maryanne@example.com</p>
+                <p class="text-gray-600">Role: Administrator</p>
+            </div>
+        </section>
+
+        <section id="upgrade" class="section-container">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Upgrade</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">Upgrade your plan to access more features.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded hover:bg-blue-600">Upgrade Now</button>
+            </div>
+        </section>
+
+        <section id="account" class="section-container">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Account Settings</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">Manage your account details and preferences.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded hover:bg-blue-600">Edit Account</button>
+            </div>
+        </section>
+
+        <section id="display" class="section-container">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Display Settings</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">Adjust the display preferences to your liking.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded hover:bg-blue-600">Edit Display Settings</button>
+            </div>
+        </section>
+
+        <section id="security" class="section-container">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Security Settings</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">Manage security settings to keep your account safe.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded hover:bg-blue-600">Edit Security Settings</button>
+            </div>
+        </section>
+
+        <section id="notifications" class="section-container">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Notifications</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">Manage notification preferences.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded hover:bg-blue-600">Edit Notification Settings</button>
+            </div>
+        </section>
+
+        <section id="backup" class="section-container">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Backup & Restore</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">Manage data backup and restore settings.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded hover:bg-blue-600">Backup Now</button>
+                <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded hover:bg-blue-600">Restore Data</button>
+            </div>
+        </section>
+
+        <section id="integration" class="section-container">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Integrations</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">Manage integrations with other systems and services.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded hover:bg-blue-600">Manage Integrations</button>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

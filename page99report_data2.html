@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Reports</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+       
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+       
+        aside {
+            position: fixed;
+            top: 4rem; 
+            left: 0;
+            width: 16rem; 
+            height: calc(100vh - 4rem); 
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+      
+        .main-content {
+            margin-left: 16rem; 
+            margin-top: 4rem; 
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Data Analysis & Reports</h1>
+            <div>
+                <a href="#" class="text-gray-600 hover:text-blue-500">Profile</a>
+            </div>
+        </div>
+    </header>
+
+   
+    <aside class="bg-gray-800 text-white">
+        <div class="p-8">
+            <h2 class="text-xl font-bold mb-4">Navigations</h2>
+            <ul>
+                <li class="mb-2">
+                    <a href="page7_birthdata.html" class="block py-2 px-4 rounded hover:bg-gray-700">Birth Rates Analysis</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page8_data_death.html" class="block py-2 px-4 rounded hover:bg-gray-700">Death Rates Analysis</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page99report_data2.html" class="block py-2 px-4 rounded hover:bg-gray-700">Custom Reports</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page9_notification.html" class="block py-2 px-4 rounded hover:bg-gray-700">Notifications</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page4_admin_dashboard1.html" class="block py-12 px-4 rounded hover:bg-gray-700">Back to Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+   
+    <div class="main-content">
+        <section>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Custom Report</h2>
+
+            <div class="bg-white p-4 rounded-lg shadow-lg mb-6">
+                <label for="report-type" class="text-xl font-bold mb-2 block">Select Report Type:</label>
+                <select id="report-type" class="form-select block w-full mt-1 border-gray-300 rounded-md shadow-sm">
+                    <option value="statistical">Statistical Summaries</option>
+                    <option value="comparative">Comparative Analyses</option>
+                    <option value="trend">Trend Analyses</option>
+                    <option value="forecasting">Forecasting Reports</option>
+                </select>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-lg mb-6">
+                <h3 class="text-xl font-bold mb-2">Filter Options:</h3>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <label for="start-date" class="text-lg font-bold block">Start Date:</label>
+                        <input type="date" id="start-date" class="form-input mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                    </div>
+                    <div class="flex-1">
+                        <label for="end-date" class="text-lg font-bold block">End Date:</label>
+                        <input type="date" id="end-date" class="form-input mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <label for="region" class="text-lg font-bold block">Select Region:</label>
+                    <select id="region" class="form-select block w-full mt-1 border-gray-300 rounded-md shadow-sm">
+                        <option value="all">All States</option>
+                        <option value="abia">Abia</option>
+                        <option value="adamawa">Adamawa</option>
+                        <option value="akwaiibom">Akwa Ibom</option>
+                        <option value="anambra">Anambra</option>
+                        <option value="bauchi">Bauchi</option>
+                        <option value="bayelsa">Bayelsa</option>
+                        <option value="benue">Benue</option>
+                        <option value="borno">Borno</option>
+                        <option value="crossriver">Cross River</option>
+                        <option value="delta">Delta</option>
+                        <option value="ebonyi">Ebonyi</option>
+                        <option value="edo">Edo</option>
+                        <option value="ekiti">Ekiti</option>
+                        <option value="enugu">Enugu</option>
+                        <option value="fct">Federal Capital Territory (FCT)</option>
+                        <option value="gombe">Gombe</option>
+                        <option value="imo">Imo</option>
+                        <option value="jigawa">Jigawa</option>
+                        <option value="kaduna">Kaduna</option>
+                        <option value="kano">Kano</option>
+                        <option value="kogi">Kogi</option>
+                        <option value="kwara">Kwara</option>
+                        <option value="lagos">Lagos</option>
+                        <option value="nasarawa">Nasarawa</option>
+                        <option value="niger">Niger</option>
+                        <option value="ogun">Ogun</option>
+                        <option value="ondo">Ondo</option>
+                        <option value="osun">Osun</option>
+                        <option value="oyo">Oyo</option>
+                        <option value="plateau">Plateau</option>
+                        <option value="rivers">Rivers</option>
+                        <option value="sokoto">Sokoto</option>
+                        <option value="taraba">Taraba</option>
+                        <option value="yobe">Yobe</option>
+                        <option value="zamfara">Zamfara</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <label for="demographics" class="text-lg font-bold block">Select Demographics (in Age):</label>
+                    <div class="flex gap-4">
+                        <div>
+                            <label for="start-demo" class="text-l font-bold">From:</label>
+                            <input type="number" name="start-demo" id="start-demo" class="mt-1 block w-26 py-2 px-3 border border-gray-300 rounded-md shadow-sm">
+                        </div>
+                        <div>
+                            <label for="end-demo" class="text-l font-bold">To:</label>
+                            <input type="number" name="end-demo" id="end-demo" class="mt-1 block w-26 py-2 px-3 border border-gray-300 rounded-md shadow-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold mt-4">Choose Visualization:</h3>
+                <select id="chart-type" class="form-select block w-full mt-1 border-gray-300 rounded-md shadow-sm">
+                    <option value="bar-chart">Bar Chart</option>
+                    <option value="pie-chart">Pie Chart</option>
+                    <option value="box-chart">Box Plot</option>
+                    <option value="line-graph">Line Graph</option>
+                    <option value="scatter-plot">Scatter Plot</option>
+                    <option value="area-chart">Area Chart</option>
+                    <option value="histogram">Histogram</option>
+                    <option value="bubble-chart">Bubble Chart</option>
+                    <option value="radar-chart">Radar Chart</option>
+                    <option value="donut-chart">Donut Chart</option>
+                    <option value="heatmap">Heatmap</option>
+                    <option value="map">Map</option>
+                </select>
+
+                <button type="submit" class="bg-blue-500 text-white mt-6 px-6 py-2 rounded-md hover:bg-blue-600">Submit</button>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-lg mb-6">
+                <h3 class="text-xl font-bold mb-2">Export and Save:</h3>
+                <div class="flex gap-4">
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600">Save Report</button>
+                    <button class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600">Export to PDF</button>
+                    <button class="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600">Export to Excel</button>
+                    <button class="bg-purple-500 text-white px-2 py-2 rounded-md hover:bg-purple-600">Export to CSV</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+</body>
+</html>

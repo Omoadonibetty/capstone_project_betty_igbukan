@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Transfer Records</title>
+    <style>
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+        .fixed-sidebar {
+            position: fixed;
+            top: 4rem;
+            left: 0;
+            width: 16rem;
+            height: calc(100vh - 4rem);
+            overflow-y: auto;
+            z-index: 10;
+        }
+        .main-content {
+            margin-left: 16rem;
+            margin-top: 4rem;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed-header">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Medical Records</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="bg-gray-800 text-white fixed-sidebar">
+        <div class="p-8">
+            <h2 class="text-xl font-bold mb-4">Navigations</h2>
+            <ul>
+                <li class="mb-2">
+                    <a href="page5_records.html" class="block py-2 px-4 rounded hover:bg-gray-700">Add Records</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page6_doc_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Patient List</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page5_records.html" class="block py-2 px-4 rounded hover:bg-gray-700">View Records</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Transfer Records</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page9_notification.html" class="block py-2 px-4 rounded hover:bg-gray-700">Notifications</a>
+                </li>
+                <li class="mb-2">
+                    <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Back to Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    
+    <main class="main-content">
+        <h2 class="text-2xl font-bold mb-8 text-gray-800">Transfer Records</h2>
+        
+       
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-4 text-gray-800">Search Patients</h3>
+            <form action="#" method="GET" class="flex items-center">
+                <input type="text" name="patient-search" id="patient-search" placeholder="Search by name or ID" class="w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <button type="submit" class="ml-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Search</button>
+            </form>
+        </div>
+        
+       
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-4 text-gray-800">Request Patient Records</h3>
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label for="hospital-name" class="block text-sm font-medium text-gray-700">Hospital Name</label>
+                    <select id="hospital-name" name="hospital-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Select a hospital</option>
+                        <option value="hospital1">New Zonal Hospital</option>
+                        <option value="hospital2">Safe Lives Hospital</option>
+                        <option value="hospital3">Zoe Hospital</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="hospital-no" class="block text-sm font-medium text-gray-700">Hospital Number</label>
+                    <input type="text" name="hospital-no" id="hospital-no" placeholder="Hospital Number" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Request Records</button>
+            </form>
+        </div>
+
+        
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-4 text-gray-800">Authorization</h3>
+            <form action="#" method="POST" class="space-y-4">
+                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Authorize Transfer</button>
+            </form>
+            
+            <div id="alert" class="mt-4 hidden bg-yellow-100 border border-yellow-400 text-yellow-700 p-4 rounded-md">
+                <p><strong>Alert:</strong> A request is being made by a hospital to transfer records.</p>
+            </div>
+        </div>
+    </main>
+
+    
+</body>
+</html>

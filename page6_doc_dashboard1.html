@@ -5,11 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor/Nurse Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .fixed-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 16rem; 
+            background-color: #1F2937; 
+            color: white;
+            padding-top: 4rem; 
+            z-index: 10;
+        }
+        .content {
+            margin-left: 16rem; 
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
 
-    <!-- Header -->
-    <header class="bg-white shadow-md">
+   
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-20">
         <div class="container mx-auto p-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-800">Medical Records</h1>
             <div>
@@ -18,10 +34,8 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="flex flex-col lg:flex-row">
-       <!-- Sidebar -->
-       <aside class="w-full h- lg:w-64 bg-gray-800 text-white h-auto lg:h-screen">
+   
+    <aside class="fixed-sidebar">
         <div class="p-8">
             <h2 class="text-xl font-bold mb-4">Navigations</h2>
             <ul>
@@ -31,29 +45,32 @@
                 <li class="mb-2">
                     <a href="page6_doc_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Patient List</a>
                 </li>
-            </li>
-            <li class="mb-2">
-                <a href="page5_records.html" class="block py-2 px-4 rounded hover:bg-gray-700">Records</a>
-            </li>
+                <li class="mb-2">
+                    <a href="view_edit.html" class="block py-2 px-4 rounded hover:bg-gray-700">View Records</a>
+                </li>
+                <li class="mb-2">
+                    <a href="transfer_records.html" class="block py-2 px-4 rounded hover:bg-gray-700">Transfer Records</a>
+                </li>
                 <li class="mb-2">
                     <a href="page9_notification.html" class="block py-2 px-4 rounded hover:bg-gray-700">Notifications</a>
                 </li>
                 <li class="mb-2">
-                    <a href="page4_admin_dashboard1.html" class="block py-12 px-4 rounded hover:bg-gray-700">Back to Dashboard</a>
+                    <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Back to Dashboard</a>
                 </li>
             </ul>
         </div>
     </aside>
 
-        <!-- Main Dashboard Content -->
-        <main class="flex-1 p-6 lg:pl-4">
-            <!-- Patient List -->
-            <section class="mb-6">
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">Patient List</h2>
-                <div class="bg-white p-4 rounded-lg shadow-lg">
-                    <form method="GET" action="/show-entries" class="mb-4">
-                        <label for="entries" class="block text-sm font-medium text-gray-700">Show entries:</label>
-                        <select id="entries" name="entries" class="mt-1 block w-full sm:w-1/4 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" onchange="this.form.submit()">
+
+    <main class="content p-6 lg:pl-4 w-full">
+        <section class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 pt-12 text-gray-800">Patient List</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <div class="flex flex-col lg:flex-row justify-between items-center mb-4">
+                    <form method="GET" action="/show-entries" class="flex items-center mb-4 lg:mb-0">
+                        <label for="entries" class="block text-sm font-medium text-gray-700 mr-2">Show entries:</label>
+                        <select id="entries" name="entries" class="mt-1 block w-full sm:w-auto py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" onchange="this.form.submit()">
+                            <option value="5">2</option>
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="25">25</option>
@@ -61,84 +78,88 @@
                             <option value="100">100</option>
                         </select>
                     </form>
-
-                    <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-                        <thead class="bg-gray-200">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Case No.</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Name</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">First Name</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Middle Name</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gender</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Age</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact No.</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Added</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Condition</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                           
-                            <tr class="bg-white border-b">
-                                <td class="px-6 py-4 whitespace-nowrap">P-01</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Hassana</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Mangu</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Uda</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Female</td>
-                                <td class="px-6 py-4 whitespace-nowrap">32</td>
-                                <td class="px-6 py-4 whitespace-nowrap">09011122233</td>
-                                <td class="px-6 py-4 whitespace-nowrap">2018-01-01</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Diabetes</td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <a href="#" class="text-blue-500 hover:underline">Edit</a>
-                                    <a href="#" class="text-blue-500 hover:underline">View</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-50 border-b">
-                                <td class="px-6 py-4 whitespace-nowrap">P-02</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Iba</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Umbolongu</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Niba</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Male</td>
-                                <td class="px-6 py-4 whitespace-nowrap">58</td>
-                                <td class="px-6 py-4 whitespace-nowrap">09022332233</td>
-                                <td class="px-6 py-4 whitespace-nowrap">2018-01-01</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Stroke</td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <a href="page5_records.html" class="text-blue-500 hover:underline">Edit</a>
-                                    <a href="page5_records.html" class="text-blue-500 hover:underline">View</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <!-- Pagination -->
-                    <div class="flex justify-between items-center mt-4">
-                        <a href="page5_records.html" class="text-blue-500 hover:underline">Previous</a>
-                        <a href="page7_birthdata.html" class="text-blue-500 hover:underline">Next</a>
-                    </div>
+    
+                    <form action="#" method="GET" class="flex items-center">
+                        <input type="text" name="patient-search" id="patient-search" placeholder="Search by name or Case No." class="w-full lg:w-96 py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <button type="submit" class="ml-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Search</button>
+                    </form>
                 </div>
-            </section>
+    
+                <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Case No.</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Name</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">First Name</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Middle Name</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gender</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Age</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact No.</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Added</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Condition</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b">
+                            <td class="px-6 py-4 whitespace-nowrap">P-01</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Hassana</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Mangu</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Uda</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Female</td>
+                            <td class="px-6 py-4 whitespace-nowrap">32</td>
+                            <td class="px-6 py-4 whitespace-nowrap">09011122233</td>
+                            <td class="px-6 py-4 whitespace-nowrap">2018-01-01</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Diabetes</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <a href="edit.html?case_no=P-01" class="text-blue-500 hover:underline">Edit</a>
+                                <a href="view.html?case_no=P-01" class="text-blue-500 hover:underline">View</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b">
+                            <td class="px-6 py-4 whitespace-nowrap">P-02</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Iba</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Umbolongu</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Niba</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Male</td>
+                            <td class="px-6 py-4 whitespace-nowrap">58</td>
+                            <td class="px-6 py-4 whitespace-nowrap">09022332233</td>
+                            <td class="px-6 py-4 whitespace-nowrap">2018-01-01</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Stroke</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <a href="edit.html?case_no=P-02" class="text-blue-500 hover:underline">Edit</a>
+                                <a href="view.html?case_no=P-02" class="text-blue-500 hover:underline">View</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <!-- Quick Access to Medical Records -->
-            <section class="mb-6">
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">Quick Access to Medical Records</h2>
-                <div class="bg-white p-4 rounded-lg shadow-lg">
-                    <p class="text-gray-600">Access and update patient medical records quickly.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4"><a href="page5_records.html">Go to Medical Records</a></button>
+              
+                <div class="flex justify-between items-center mt-4">
+                    <a href="page5_records.html" class="text-blue-500 hover:underline">Previous</a>
+                    <a href="page7_birthdata.html" class="text-blue-500 hover:underline">Next</a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Notifications Section -->
-            <section>
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">Notifications</h2>
-                <div class="bg-white p-4 rounded-lg shadow-lg">
-                    <p class="text-gray-600">View pending tasks and important updates.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4"><a href="page9_notification.html">View Notifications</a></button>
-                </div>
-            </section>
-        </main>
-    </div>
+        
+        <section class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Records</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">Manage patient medical records here.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4"><a href="page5_records.html">Go to Medical Records</a></button>
+            </div>
+        </section>
+
+        
+        <section>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Notifications</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="text-gray-600">View pending tasks and important updates.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4"><a href="page9_notification.html">View Notifications</a></button>
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>

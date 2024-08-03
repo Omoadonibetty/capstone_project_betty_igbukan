@@ -5,90 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2d3748; 
+            min-width: 160px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        .dropdown-content a {
+            color: #edf2f7; 
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #4a5568; 
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans">
 
-    <!-- Header -->
-    <header class="bg-white shadow-md">
+  
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-20">
         <div class="container mx-auto p-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
             <nav>
                 <ul class="flex space-x-4">
-                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Profile</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Profile</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="flex flex-col lg:flex-row">
-        <!-- Sidebar -->
-        <aside class="w-full lg:w-64 bg-gray-800 text-white h-auto lg:h-screen">
+    
+    <div class="flex mt-16"> 
+
+        
+        <aside class="fixed top-16 left-0 w-64 bg-gray-800 text-white h-screen overflow-y-auto z-10">
             <div class="p-4">
-                <h2 class="text-xl font-bold mb-4">Navigation</h2>
+                <h2 class="text-xl font-bold mb-4">Navigations</h2>
                 <ul>
                     <li class="mb-2">
-                        <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">Dashboard</a>
+                        <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700 transition-colors">Dashboard</a>
+                    </li>
+                    <li class="mb-2 dropdown relative">
+                        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 transition-colors">Medical Records</a>
+                        <div class="dropdown-content absolute left-0 top-full mt-1">
+                            <a href="page5_records.html">Add Record</a>
+                            <a href="page6_doc_dashboard1.html">Patient List</a>
+                            <a href="view_edit.html">View Records</a>
+                            <a href="transfer_records.html">Transfer Records</a>
+                        </div>
+                    </li>
+                    <li class="mb-2 dropdown relative">
+                        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 transition-colors">Data Analysis & Reports</a>
+                        <div class="dropdown-content absolute left-0 top-full mt-1">
+                            <a href="page7_birthdata.html">Birth Data</a>
+                            <a href="page8_data_death.html">Death Data</a>
+                            <a href="page99report_data2.html">Generate Report</a>
+                        </div>
                     </li>
                     <li class="mb-2">
-                        <a href="page5_records.html" class="block py-2 px-4 rounded hover:bg-gray-700">Medical Records</a>
+                        <a href="page9_notification.html" class="block py-2 px-4 rounded hover:bg-gray-700 transition-colors">Notification & Alerts</a>
                     </li>
                     <li class="mb-2">
-                        
-                        <a href="page7_birthdata.html" class="block py-2 px-4 rounded hover:bg-gray-700">Data Analysis & Reports</a>
+                        <a href="user_management.html" class="block py-2 px-4 rounded hover:bg-gray-700 transition-colors">User Management</a>
                     </li>
                     <li class="mb-2">
-                        <a href="page9_notification.html" class="block py-2 px-4 rounded hover:bg-gray-700">Notification & Alerts</a>
+                        <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700 transition-colors">System Settings</a>
                     </li>
                     <li class="mb-2">
-                        <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">User Management</a>
+                        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 transition-colors">Feedback & Suggestions</a>
                     </li>
                     <li class="mb-2">
-                        <a href="page4_admin_dashboard1.html" class="block py-2 px-4 rounded hover:bg-gray-700">System Settings</a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Feedback & Suggestions</a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Logout</a>
+                        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 transition-colors">Logout</a>
                     </li>
                 </ul>
             </div>
         </aside>
 
-        <!-- Main Dashboard Content -->
-        <main class="flex-1 p-6">
-            <!-- Overview Cards -->
+       
+        <main class="ml-64 flex-1 p-6">
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-                <div class="bg-white p-4 rounded-lg shadow-lg">
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">Total Births</h3>
                     <p class="text-gray-600 text-lg">1,234</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-lg">
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">Total Deaths</h3>
                     <p class="text-gray-600 text-lg">567</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-lg">
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">Total Users</h3>
                     <p class="text-gray-600 text-lg">789</p>
                 </div>
             </div>
 
-            <!-- User Management Section -->
+           
             <section class="mb-6">
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">User Management</h2>
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Statistics</h2>
                 <div class="bg-white p-4 rounded-lg shadow-lg">
-                    <p class="text-gray-600">Manage user accounts, permissions, and roles.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4">Manage Users</button>
+                    <p class="text-gray-600">Include charts and graphs here.</p>
+                    <div class="h-64 bg-gray-200 rounded-lg">
+                        <img src="https://datavizproject.com/wp-content/uploads/types/Line-Graph.png" alt="chart" width="260">
+                    </div>
                 </div>
             </section>
 
-            <!-- System Settings Section -->
-            <section>
+            
+            <section class="mb-6">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Recent Activity</h2>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <ul>
+                        <li class="border-b py-2">User Amadi Nke updated a record.</li>
+                        <li class="border-b py-2">New data entry added.</li>
+                        <li class="border-b py-2">System settings modified.</li>
+                    </ul>
+                </div>
+            </section>
+
+            
+            <section class="mb-6">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">User Management</h2>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border p-2">Name</th>
+                                <th class="border p-2">Role</th>
+                                <th class="border p-2">Status</th>
+                                <th class="border p-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">Afam Nekedu</td>
+                                <td class="border p-2">Admin</td>
+                                <td class="border p-2">Active</td>
+                                <td class="border p-2">
+                                    <button class="bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-blue-600">Edit</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded-md hover:bg-red-600">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            
+            <section class="mb-6">
                 <h2 class="text-2xl font-bold mb-4 text-gray-800">System Settings</h2>
                 <div class="bg-white p-4 rounded-lg shadow-lg">
                     <p class="text-gray-600">Configure system preferences and settings.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4">System Settings</button>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mt-4">System Settings</button>
+                </div>
+            </section>
+
+            
+            <section>
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Help & Support</h2>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <p class="text-gray-600">For assistance, visit our <a href="google.com" class="text-blue-500">Help Center</a>.</p>
+                    <form class="mt-4">
+                        <label class="block mb-2">Your Message:</label>
+                        <textarea rows="4" class="border p-2 rounded w-full"></textarea>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4">Submit</button>
+                    </form>
                 </div>
             </section>
         </main>
